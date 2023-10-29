@@ -1,0 +1,68 @@
+{
+    "startupProgress": {
+      "phases": [
+        {
+          "id": "foundation",
+          "name": "Foundation",
+          "tasks": [
+            {
+              "id": "task1",
+              "description": "Setup virtual office",
+              "completed": false
+            },
+            {
+              "id": "task2",
+              "description": "Set mission & vision",
+              "completed": false
+            },
+            {
+              "id": "task3",
+              "description": "Select business name",
+              "completed": false
+            },
+            {
+              "id": "task4",
+              "description": "Buy domains",
+              "completed": false
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "discovery",
+          "name": "Discovery",
+          "tasks": [
+            {
+              "id": "task5",
+              "description": "Create roadmap",
+              "completed": false
+            },
+            {
+              "id": "task6",
+              "description": "Competitor analysis",
+              "completed": false
+            }
+          ],
+          "completed": false
+        },
+        {
+          "id": "delivery",
+          "name": "Delivery",
+          "tasks": [
+            {
+              "id": "task7",
+              "description": "Release marketing website",
+              "completed": false
+            },
+            {
+              "id": "task8",
+              "description": "Release MVP",
+              "completed": false
+            }
+          ],
+          "completed": false
+        }
+      ]
+    }
+  }
+  
