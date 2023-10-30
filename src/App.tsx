@@ -3,6 +3,8 @@ import { AddNewTask } from "./components/AddNewTask";
 import { StartupProgressProvider } from "./context/StartupProgressContext";
 import TasksList from "./components/TasksList";
 
+// PR TEST
+
 function App() {
   return (
     <StartupProgressProvider>
