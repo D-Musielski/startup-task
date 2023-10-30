@@ -1,8 +1,41 @@
+import { useCallback, useEffect, useState } from "react";
 import { useStartupProgressContext } from "../context/StartupProgressContext";
 import { StartupProgress } from "../types/dataTypes";
 
 const TasksList = () => {
   const { startupProgress, setStartupProgress } = useStartupProgressContext();
+  const [randomFact, setRandomFact] = useState(null);
+
+  const areAllPhasesCompleted = useCallback(() => {
+    for (const phase of startupProgress.phases) {
+      if (!phase.completed) {
+        return false;
+      }
+    }
+    return true;
+  }, [startupProgress.phases]);
+
+  useEffect(() => {
+    if (areAllPhasesCompleted()) {
+      fetchRandomFact();
+    } else {
+      setRandomFact(null);
+    }
+  }, [areAllPhasesCompleted, startupProgress]);
+
+  async function fetchRandomFact() {
+    try {
+      const response = await fetch("https://uselessfacts.jsph.pl/random.json");
+      if (response.ok) {
+        const data = await response.json();
+        setRandomFact(data.text);
+      } else {
+        console.error("Failed to fetch random fact.");
+      }
+    } catch (error) {
+      console.error("Error while fetching random fact:", error);
+    }
+  }
 
   const toggleTaskCompletion = (phaseId: string, taskId: string) => {
     setStartupProgress((prevProgress: StartupProgress) => {
@@ -68,6 +101,7 @@ const TasksList = () => {
           </ul>
         </div>
       ))}
+      {randomFact && <div>{randomFact}</div>}
     </div>
   );
 };
