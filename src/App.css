@@ -3,3 +3,28 @@
   flex-direction: column;
   align-items: center;
 }
+
+.phase {
+  padding: 0 0.6rem;
+  background-color: black;
+  border-radius: 100%;
+  color: white;
+  margin-right: 0.3rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.completed {
+  color: rgb(34, 178, 94);
+}
+
+.completed .phase {
+  background-color: rgb(34, 178, 94);
+}
+
+.addNewTaskForm {
+  display: flex;
+  flex-direction: column;
+}
